@@ -64,33 +64,33 @@ const Form = () => {
     return (
         <div>
             <form onSubmit={onform ? updateform : datasubmit} >
-                <div style={{ display: 'flex', padding: '20px' }}>
-                    <div>
+                <div className='form_container' >
+                    <div className='form'>
                         <label htmlFor="name">Name</label>
                         <br />
                         <input className={inputstyle} type="text" name='name' placeholder='please enter name' value={formdata.name} onChange={valuechange} required
                         />
                     </div>
                     <br />
-                    <div>
+                    <div className='form'>
                         <label htmlFor="email">Email</label>
                         <br />
                         <input className={inputstyle} type="email" name='email' placeholder='please enter email' value={formdata.email} onChange={valuechange} required
                         />
                     </div>
                     <br />
-                    <div>
+                    <div className='form'>
                         <label htmlFor="mobile">Mobile No.</label>
                         <br />
                         <input className={inputstyle} type="mobile" name='mobile' placeholder='please enter password' value={formdata.mobile} onChange={valuechange} required />
                     </div>
                     <br />
-                    <div>
+                    <div className='form'>
                         <button className='button' ><span>{!onform ? `Add` : `Update`}</span></button>
                     </div>
                 </div>
             </form>
-            <div style={{ padding: '20px' }}>
+            <div style={{marginTop:'20px'}}>
                 <table>
                     <thead>
                         <tr>

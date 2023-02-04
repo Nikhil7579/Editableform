@@ -1,83 +1,126 @@
 .button {
-    /* border-radius: 4px; */
-    /* background-color: #f4511e; */
-    background-color:#FF5733;
+  /* border-radius: 4px; */
+  /* background-color: #f4511e; */
+  background-color: #FF5733;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px;   
+  width: 200px;
+  height: 46px;
+  transition: all 0.5s;
+  cursor: pointer;
+  position: relative;
+  /* top: 18px; */
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  /* padding: 10px; */
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+
+}
+
+tr:nth-child(even) {
+  /* background-color: #dddddd; */
+}
+
+
+.edit {
+  background-color: white;
+}
+
+.editone {
+  background-color: rgb(172, 218, 218);
+}
+
+.edittwo {
+  background-color: rgb(121, 234, 92);
+}
+
+.icon {
+  color: gray;
+}
+
+.delete {
+  background-color: red;
+}
+
+.inputs {
+  width: 100%;
+  height: 40px;
+}
+
+.editinputs {
+  width: 100%;
+  height: 40px;
+  /* color: blue; */
+  background-color: rgb(172, 218, 218);
+}
+.form_container {
+  display: inline;
+  width: 100%;
+}
+.form{
+  padding:20px;
+}
+
+@media only screen and (max-width: 700px) {
+  .form{
+    padding:10px;
+  }
+
+}
+
+@media only screen and (max-width: 380px) {
+  .form{
+    padding:5px;
+  }
+  .button {
+    background-color: #FF5733;
     border: none;
     color: #FFFFFF;
     text-align: center;
     font-size: 28px;
-    /* padding: 10px;    */
-    width: 200px;
+    /* padding: px;    */
+    width: 100%;
     height: 46px;
     transition: all 0.5s;
     cursor: pointer;
     position: relative;
-    top: 18px;
   }
-  .button span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-  }
-  
-  .button span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-  }
-  
-  .button:hover span {
-    padding-right: 25px;
-  }
-  
-  .button:hover span:after {
-    opacity: 1;
-    right: 0;
-  }
-  table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-    padding: 10px;
-  }
-  
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: center;
-    padding: 8px;
-  
-  }
-  
-  tr:nth-child(even) {
-    /* background-color: #dddddd; */
-  }
-  .inputs{
-    width:350px;
-    height:40px;
-    
-  }
-  .editinputs{
-    width:350px;
-    height:40px;
-    /* color: blue; */
-    background-color: rgb(172, 218, 218);
-  }
-  .edit{
-    background-color: white;
-  }
-  .editone{
-    background-color: rgb(172, 218, 218);
-  }
-  .edittwo{
-    background-color: rgb(121, 234, 92);
-  }
-  .icon{
-    color:gray;
-  }
-.delete{
-    background-color:red;
 }
