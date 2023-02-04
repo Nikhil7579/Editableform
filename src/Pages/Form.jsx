@@ -10,6 +10,7 @@ const Form = () => {
     const [onform, setOnform] = useState(false);
     let { name, email, mobile } = formdata;
     const [editstyle, setEditstyle] = useState("edit");
+    const [inputstyle, setInputstyle] = useState("inputs")
 
     const valuechange = (e) => {
         setFormdata({ ...formdata, [e.target.name]: e.target.value })
@@ -25,16 +26,17 @@ const Form = () => {
         setListform([...listform, { name, email, mobile }])
     }
     const editform = (i) => {
+        setInputstyle("editinputs")
         let { name, email, mobile } = listform[i]
         setFormdata({ name, email, mobile })
         setOnform(true);
         setIndex(i)
         console.log(index)
         setEditstyle("editone")
-
     }
 
     const updateform = (e) => {
+        setInputstyle("inputs");
         e.preventDefault()
         setEditstyle("edittwo")
         setTimeout(() => {
@@ -48,9 +50,16 @@ const Form = () => {
     }
 
     const deleteformdata = (i) => {
+        setIndex(i)
+        setEditstyle("delete")
+        setTimeout(() => {
             let total = [...listform]
             total.splice(i, 1)
             setListform(total)
+            setEditstyle("edit")
+
+        }, 1000)
+
     }
     return (
         <div>
@@ -59,21 +68,21 @@ const Form = () => {
                     <div>
                         <label htmlFor="name">Name</label>
                         <br />
-                        <input className="inputs" type="text" name='name' placeholder='please enter name' value={formdata.name} onChange={valuechange} required
+                        <input className={inputstyle} type="text" name='name' placeholder='please enter name' value={formdata.name} onChange={valuechange} required
                         />
                     </div>
                     <br />
                     <div>
                         <label htmlFor="email">Email</label>
                         <br />
-                        <input className="inputs" type="email" name='email' placeholder='please enter email' value={formdata.email} onChange={valuechange} required
+                        <input className={inputstyle} type="email" name='email' placeholder='please enter email' value={formdata.email} onChange={valuechange} required
                         />
                     </div>
                     <br />
                     <div>
                         <label htmlFor="mobile">Mobile No.</label>
                         <br />
-                        <input className="inputs" type="mobile" name='mobile' placeholder='please enter password' value={formdata.mobile} onChange={valuechange} required />
+                        <input className={inputstyle} type="mobile" name='mobile' placeholder='please enter password' value={formdata.mobile} onChange={valuechange} required />
                     </div>
                     <br />
                     <div>
@@ -97,7 +106,7 @@ const Form = () => {
                         {listform.map((item, i) => {
                             return (
 
-                                <tr className={index === i ? editstyle : console.log("Data Add") } key={i}>
+                                <tr className={index === i ? editstyle : console.log("Data Add")} key={i}>
                                     <td>{item.name}</td>
                                     <td>{item.email}</td>
                                     <td>{item.mobile}</td>

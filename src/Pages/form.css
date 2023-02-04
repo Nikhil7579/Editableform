@@ -1,7 +1,7 @@
 .button {
     /* border-radius: 4px; */
     /* background-color: #f4511e; */
-    background-color:gray;
+    background-color:#FF5733;
     border: none;
     color: #FFFFFF;
     text-align: center;
@@ -58,6 +58,13 @@
   .inputs{
     width:350px;
     height:40px;
+    
+  }
+  .editinputs{
+    width:350px;
+    height:40px;
+    /* color: blue; */
+    background-color: rgb(172, 218, 218);
   }
   .edit{
     background-color: white;
@@ -71,9 +78,6 @@
   .icon{
     color:gray;
   }
-.icon:hover{
-    background-color: red;
-}
 .delete{
-    background-color:rgb(212, 255, 0);
+    background-color:red;
 }
